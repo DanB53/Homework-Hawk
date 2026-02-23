@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/class.css' type='text/css'>
+    
+{% endblock %}
+{% block title %}
+    Homework Hawk
+{% endblock %}
+{% block content %}
+
+<div class="info">
+    <div>
+        <h3 class="unselectable" id="classname">{{classname}}</h3>
+        <form method="POST" action="/class" id="assignment">
+
+        <select id="assignmentSelect">
+            <option value={{ selectedAssignment }}>{{ selectedAssignment }}</option>
+            {% for value in assignments %}
+                <option>{{ value }}</option>
+            {% endfor %}
+        </select>
+        </form>
+        <div class="scanRow">
+            <div id="scanOptionDiv">
+                <p>Scan for:</p>
+            <select id="scanTypeSelect">
+                <option value="bo">AI & Plagiarism</option>
+                <option value="ai">AI</option>
+                <option value="pl">Plagiarism</option>
+            </select>
+            </div>
+
+
+    </div>
+
+    </div>
+
+</div>
+    <main>
+
+        <div class="students">
+            <form method="POST" action="/class" id="students">
+            {% for value in students %}
+              <div class="row">
+                <div class="column unselectable">
+                  <p>{{value[0]}}</p>
+                </div>
+                {% if value[1] == "AI" %}
+                  <div class="column" title="AI">
+                    <p class="ai indicator">mmii</p>
+                  </div>
+                {% elif value[1] == "PL": %}
+                  <div class="column" title="Plagiarism">
+                    <p class="pl indicator">mmii</p>
+                  </div>
+                {% elif value[1] == "CL": %}
+                  <div class="column" title="Clear">
+                    <p class="cl indicator">mmii</p>
+                  </div>
+                {% elif value[1] == "UN": %}
+                  <div class="column" title="Unmarked">
+                    <input class="un indicator" type="checkbox" name="unmarkedStudents" value="{{value[0]}}">
+                  </div>
+                    <div class="column">
+                        <button>Submit</button>
+                    </div>
+                {% elif value[1] == "BO": %}
+                  <div class="column" title="AI and Plagiarism">
+                    <p class="bo indicator">mi</p>
+                    <p class="bo indicator">mi</p>
+                  </div>
+                {% elif value[1] == "None": %}
+                  <div class="column" title="No work found">
+                    <input class="un indicator" type="checkbox" disabled="disabled">
+                  </div>
+                    <div class="column">
+                        <a class="noWorkButton">No work handed in</a>
+                    </div>
+                {% endif %}
+
+              </div>
+            {% endfor %}
+            </div>
+        </div>
+                <div class="key">
+                    <h4>Key</h4>
+                    <div class="keyRow">
+                        <p>AI</p>
+                        <p class="ai indicator">mmii</p>
+                    </div>
+                    <div class="keyRow">
+                        <p>Plagiarism</p>
+                        <p class="pl indicator">mmii</p>
+                    </div>
+                    <div class="keyRow">
+                        <p>AI & Plagiarism</p>
+                        <div class="column">
+                            <p class="bo indicator">mi</p>
+                            <p class="bo indicator">mi</p>
+                        </div>
+                    </div>
+                    <div class="keyRow">
+                        <p>Clear</p>
+                        <p class="cl indicator">mmii</p>
+                    </div>
+                    <div class="keyRow">
+                        <p>Unmarked</p>
+                        <div class="column">
+                            <input class="un indicator" type="checkbox" name="unmarkedStudents">
+                        </div>
+                    </div>
+            </div>
+    </main>
+    <script src="/static/class.js"></script>
+    <div>
+    <iframe id="scan" src="https://app.originality.ai/share/dy6oku3eqx2ap9ht" ></iframe>
+<!-- {#    <object type="text/html" data="https://app.originality.ai/share/dy6oku3eqx2ap9ht" width="1000px" height="600px" style="overflow:auto;border:5px ridge blue">#} -->
+</div>
+{% endblock %}

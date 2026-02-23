@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/assets/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/global.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel='stylesheet' href='/static/global.css' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    {% block style %}{% endblock %}
+    <title>Homework Hawk</title>
+</head>
+<body>
+    <nav id="nav">
+        <div class="logo unselectable">
+            <img src="/static/assets/logo-icon 1.png" onclick="index()">
+            <h1 onclick="index()">Homework <div>Hawk</div></h1>
+        </div>
+        <div class="notification unselectable">
+            <p id="notification-text">{{session["notification"]}}</p>
+            <div id="notification-background">.</div>
+        </div>
+        <div class="links unselectable">
+            {% if session['logged_in'] == False %}
+                {% if request.path == '/' %}
+                    <a onclick="login()">Login</a>
+                    <a class="nav-highlighted" onclick="contact()">Contact Us</a>
+                {% elif request.path == '/contact' %}
+                    <a onclick="login()">Log In</a>
+                {% elif request.path == '/login' %}
+                    <a class="nav-highlighted" onclick="contact()">Contact Us</a>
+                    
+                {% endif %}
+            {% endif %}
+            {% if session["admin_account"] == True and '/admin' != request.path and '/' != request.path and '/login' != request.path %}
+                <a class="nav-highlighted" onclick="admin()">Admin</a>
+            {% endif %}
+            {% if '/admin' == request.path %}
+                <a class="nav-highlighted" onclick="home()">Home</a>
+                <a class="nav-highlighted" href="/help">Help</a>
+                <div class="profile-outer-menu">
+                    <a class="nav-highlighted">Account</a>
+                    <a id="profile-sub-menu" class="nav-highlighted midButton" onclick="profile()">Profile</a>
+                    <a id="profile-sub-menu" class="nav-highlighted" href="/logout">Log Out</a>
+                </div>
+            {% endif %}
+            {% if '/classes' in request.path %}
+                    <a class="nav-highlighted" onclick="home()">Home</a>
+                    <a class="nav-highlighted" href="/help">Help</a>
+                    <div class="profile-outer-menu">
+                        <a class="nav-highlighted">Account</a>
+                        <a id="profile-sub-menu" class="nav-highlighted midButton" onclick="profile()">Profile</a>
+                        <a id="profile-sub-menu" class="nav-highlighted" href="/logout">Log Out</a>
+                    </div>
+            {% endif %}
+            {% if '/class' in request.path and "/classes" not in request.path %}
+                    <a class="nav-highlighted" onclick="home()">Home</a>
+                    <a class="nav-highlighted" onclick="classesPage()">Classes</a>
+                        <a id="profile-sub-menu" class="nav-highlighted midButton" href="/help">Help</a>
+                    <div class="profile-outer-menu">
+                        <a class="nav-highlighted">Account</a>
+                        <a id="profile-sub-menu" class="nav-highlighted midButton" onclick="profile()">Profile</a>
+                        <a id="profile-sub-menu" class="nav-highlighted" href="/logout">Log Out</a>
+                    </div>
+            {% endif %}
+            {% if request.path == '/home' %}
+                    <a class="nav-highlighted" onclick="classesPage()">Classes</a>
+                    <a class="nav-highlighted" href="/help">Help</a>
+                    <div class="profile-outer-menu">
+                        <a class="nav-highlighted">Account</a>
+                        <a id="profile-sub-menu" class="nav-highlighted midButton" onclick="profile()">Profile</a>
+                        <a id="profile-sub-menu" class="nav-highlighted" href="/logout">Log Out</a>
+                    </div>
+            {% endif %}
+            {% if request.path == '/profile' %}
+                    <a class="nav-highlighted" onclick="home()">Home</a>
+                <a id="profile-sub-menu" class="nav-highlighted midButton" href="/help">Help</a>
+                    <a class="nav-highlighted" onclick="classesPage()">Classes</a>
+            {% endif %}
+            {% if request.path == '/help' %}
+                    <a class="nav-highlighted" onclick="classesPage()">Home</a>
+                    <a class="nav-highlighted" onclick="classesPage()">Classes</a>
+                    <div class="profile-outer-menu">
+                        <a class="nav-highlighted">Account</a>
+                        <a id="profile-sub-menu" class="nav-highlighted midButton" onclick="profile()">Profile</a>
+                        <a id="profile-sub-menu" class="nav-highlighted" href="/logout">Log Out</a>
+                    </div>
+            {% endif %}
+
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

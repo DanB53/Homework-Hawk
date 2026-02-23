@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/contact.css' type='text/css'>
+{% endblock %}
+{% block content %}
+<div class="content">
+    <div class="card">
+        <div class="card-content">
+            <h3>Contact Us</h3>
+            <form id="contact-content">
+                <div class="row">
+                    <label>Email</label>
+                    <input id="email">
+                    <button>Submit</button>
+                </div>
+                <label>Message</label>
+                <textarea cols="30" rows="2" id="message"></textarea>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/static/contact.js"></script>
+{% endblock %}

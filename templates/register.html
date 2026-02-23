@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/login.css' type='text/css'>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="card">
+            <div class="img-wrapper unselectable">
+                <img src="/static/assets/card-bg.png">
+            </div>
+            <div class="inputs-wrapper">
+                <h3 class="unselectable">Hello, we're glad you're here!</h3>
+
+                <form id="register-form">
+                    <p>To get started, please pick a password.</p>
+                        <div>
+                            <input type="text" placeholder="Username" name="name">
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Temporary Password" name="tempPassword">
+                        </div>
+                        <div>
+                            <input type="password" placeholder="New Password" name="password">
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Confirm New Password" name="confirmPassword">
+                        </div>
+                        <button class="clickable unselectable" type="submit">Submit</button> 
+                    </form>
+        
+            </div>
+        </div>
+    </div>
+    <script src="/static/register.js"></script>
+{% endblock %}

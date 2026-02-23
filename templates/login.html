@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/login.css' type='text/css'>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div class="card">
+            <div class="img-wrapper unselectable">
+                <img src="/static/assets/card-bg.png">
+            </div>
+            <div class="inputs-wrapper">
+                <h3 class="unselectable">Log In</h3>
+                    <form id="login-form">
+
+                        <div>
+                            <input type="text" placeholder="Username" name="name">
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password" name="password">                
+                        </div>
+                        <button class="clickable unselectable" type="submit">Submit</button> 
+                        <p class="unselectable">Don't have an profile? <a href="/contact">Contact us here.</a></p>
+                    </form>
+        
+            </div>
+        </div>
+    </div>
+    <script src="/static/login.js"></script>
+{% endblock %}

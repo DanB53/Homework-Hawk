@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/index.css' type='text/css'>
+{% endblock %}
+{% block content %}
+    <p style="display: none" id="firstTime">{{ firstTime }}</p>
+    <section id="page1">
+        <div class="background-container">
+            <div class="unselectable background-image"></div>
+            <img class="unselectable foreground-image parallax" src="/static/assets/index-bg - floor.png" >
+            <div class="content">
+                <h1>Teachers,</h1>
+                <h1>Let's stop cheaters!</h1>
+
+            </div>
+    <div id="cookieWrapper">
+        <p>Cookies are used to store whether the account is logged in, the admin status and what the current notification is.</p>
+        <p>Please allow cookies to allow Homework Hawk to function.</p>
+        <form id="allowCookiesButton">
+            <button type="submit">Allow Cookies</button>
+        </form>
+    </div>
+        </div>
+    </section>
+
+    <section id="page2" class="parallax">
+        <div class="navigation">
+            <script src="/static/index.js"></script>
+            <button id="problem" onclick="problem()" class="active">The Problem</button>
+            <button id="mission" onclick="mission()">The Mission</button>
+            <button id="solution" onclick="solution()">Our Solution</button>
+        </div>
+        
+        <div class="text-wrapper">
+            <p id="desc">When students submit work online, it is very hard and inconvenient for the teachers to check whether the students have cheated with either AI (chatGPT etc) or just copy and paste from a source.</p>
+        </div>
+    </section>
+{% endblock %}

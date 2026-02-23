@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/profile.css' type='text/css'>
+{% endblock %}
+{% block title %}
+    Homework Hawk
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div id="sub-nav">
+            <h3>Profile</h3>
+            <a id="logoutButton" href="/logout">Log Out</a>
+        </div>
+        <div class="cards-wrapper">
+            <div class="card">
+                <div class="card-content">
+                    <h4>Automations</h4>
+                    <form method="POST" action="/class" id="class">
+                        <select id="classSelect">
+                            <option value={{ selectedClass }}>{{ selectedClass }}</option>
+                            {% for value in classes %}
+                                <option>{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                    <div class="rows" id="automations">
+
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h4>Options</h4>
+                    <h5>Change Password</h5>
+                    <div class="rows">
+                        <form method="POST" id="passwords">
+                            <div class="row">
+                                <p>Old Password</p>
+                                <div class="column">
+                                    <input type="password" name="profilePasswordBox1" id="profilePasswordBox1">
+                                    <span id="icon1" class="material-symbols-outlined unselectable" onclick="togglePasswordVisibility('1')">visibility_off</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p>Change Password</p>
+                                <div class="column">
+                                    <input type="password" name="profilePasswordBox2" id="profilePasswordBox2">
+                                <span id="icon2" class="material-symbols-outlined unselectable" onclick="togglePasswordVisibility('2')">visibility_off</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>Confirm Password</p>
+                            <div class="column">
+                                <input type="password" name="profilePasswordBox3" id="profilePasswordBox3">
+                                <span id="icon3" class="material-symbols-outlined unselectable" onclick="togglePasswordVisibility('3')">visibility_off</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                        <form id="flagPercentage">
+                            <h5>Minimum flag %</h5>
+                            <p id="flagPercentageDisplay">{{ minFlagPercentage }}%</p>
+                            <input type="range" value="{{ minFlagPercentage }}" id="flagPercentageSlider" oninput="sliderChange()" min="1">
+                            <p>This is the minimum percentage of either AI or Plagiarism (or both) that must be reached in order to be flagged by Homework Hawk. (The lower the percentage the easier it is for work to be flagged). This has a default value of 15%.</p>
+                        </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/profile.js"></script>
+{% endblock %}

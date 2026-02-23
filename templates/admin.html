@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/admin.css' type='text/css'>
+{% endblock %}
+{% block content %}
+    <div class="content">
+    <h3>Admin</h3>
+        <div class="cards-wrapper">
+            <div class="card">
+                <div class="card-content">
+                    <h4>Classes</h4>
+                    <form id="newClass">
+                        <input placeholder="New Class Name" id="newClassName">
+                        <input placeholder="User Name" id="classUserName">
+                        <button type="submit">Create Class</button>
+                    </form>
+                    <div class="scroll-wrapper" id="classesSW">
+                        <table id="classes">
+                            <tr>
+                                <td>Class Name</td>
+                                <td>User</td>
+                                <td>Options</td>
+                            </tr>
+                            {% for class in classes %}
+                                <tr>
+                                    <td id="tableClassName">
+                                        <p id="{{ class[0] }} ClassName">{{ class[0] }}</p>
+                                    </td>
+                                    <td id="tableUserName">
+                                        {% if class[1] == "None" %}
+                                            <p id="{{ class[0] }} UserName" class="noUserWarning">No user assigned</p>
+                                        {% else %}
+                                            <p id="{{ class[0] }} UserName">{{ class[1] }}</p>
+                                        {% endif %}
+                                    </td>
+                                    <td id="tableIcons">
+                                        <span id="{{class[0]}} EditButton" onclick="editClass({{ class }})" class="material-symbols-outlined">edit</span>
+                                        <span id="{{class[0]}} DeleteButton" onclick="removeClass({{class}})" class="material-symbols-outlined">delete</span>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h4>Users</h4>
+                    <form id="newUser">
+                        <input placeholder="New User Name" id="newUserName">
+                        <input placeholder="Temporary Password" id="tempPassword" type="password">
+                        <div class="adminCheckbox">
+                            <p>Admin Account</p>
+                            <input id="adminAccountCheckbox" type="checkbox">
+                        </div>
+                        <button type="submit">Create User</button>
+                    </form>
+                    <div class="scroll-wrapper">
+                    <table id="users">
+                        <tr>
+                            <td>User Name</td>
+                            <td>Admin</td>
+                            <td>Delete</td>
+                        </tr>
+                        {% for user in users %}
+                                <tr>
+                                    <td>
+                                        <p>{{ user[0][0] }}</p>
+                                    </td>
+
+                                    <td id="adminIcons">
+                                        {% if user[1] == True %}
+                                            <span onclick="adminOff('{{user[0][0]}}')" class="material-symbols-outlined on">toggle_on</span>
+                                        {% else %}
+                                            <span onclick="adminOn('{{user[0][0]}}')" class="material-symbols-outlined off">toggle_off</span>
+                                        {% endif %}
+
+                                    </td>
+                                    <td id="tableIcons">
+                                        <span onclick="removeUser('{{ user[0][0] }}')" class="material-symbols-outlined">delete</span>
+                                    </td>
+                                </tr>
+                        {% endfor %}
+                    </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h4>School Statistics</h4>
+                    <div class="stats scroll-wrapper" id="classesStatsWrapper">
+                        <div class="section">
+                            <div class="row">
+                                <h5>Total words scanned</h5>
+                                <p>{{ totalWords }}</p>
+                            </div>
+                            <div class="row">
+                                <h5>Words scanned this month</h5>
+                                <p>{{ monthWords }}</p>
+                            </div>
+                            <div class="row">
+                                <h5>Amount spent this month</h5>
+                                <p>£{{ amountSpent }}</p>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="row">
+                                <h5>AI Rate</h5>
+                                <p>{{ totalAI }}%</p>
+                            </div>
+                            <div class="row">
+                                <h5>Plagiarism Rate</h5>
+                                <p>{{ totalPL }}%</p>
+                            </div>
+                            <div class="row">
+                                <h5>Both rate</h5>
+                                <p>{{ totalBO }}%</p>
+                            </div>
+                            <div class="row">
+                                <h5>Clear rate</h5>
+                                <p>{{ totalCL }}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/admin.js"></script>
+    <div id="usersList" style="display: none;">
+    {% for i in range(users|length) %}
+        <span class="user" id="user {{ i }}">{{ users[i][0][0] }}</span>
+    {% endfor %}
+</div>
+{% endblock %}

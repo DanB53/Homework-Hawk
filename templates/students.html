@@ -1,0 +1,52 @@
+
+{% for value in students %}
+  <div class="row">
+    <div class="column unselectable">
+      <p>{{value[0]}}</p>
+    </div>
+    {% if value[1] == "AI" %}
+      <div class="column" title="AI">
+        <p class="ai indicator">mmii</p>
+      </div>
+    {% elif value[1] == "PL": %}
+      <div class="column" title="Plagiarism">
+        <p class="pl indicator">mmii</p>
+      </div>
+    {% elif value[1] == "CL": %}
+      <div class="column" title="Clear">
+        <p class="cl indicator">mmii</p>
+      </div>
+    {% elif value[1] == "UN": %}
+      <div class="column" title="Unmarked">
+        <input class="un indicator" type="checkbox" name="unmarkedStudents" value="{{value[0]}}">
+      </div>
+        <div class="column">
+            <button>Submit</button>
+        </div>
+    {% elif value[1] == "BO": %}
+      <div class="column" title="AI and Plagiarism">
+        <p class="bo indicator">mi</p>
+        <p class="bo indicator">mi</p>
+      </div>
+    {% elif value[1] == "ER": %}
+            <div class="column" title="Unmarked">
+                <input class="un indicator" type="checkbox" name="unmarkedStudents" value="{{value[0]}}">
+            </div>
+            <div class="column">
+                <button>Submit</button>
+            </div>
+            <div class="column">
+                <a id="workTooShortMessage">Student's work is not at least 50 characters.</a>
+            </div>
+          </div>
+    {% elif value[1] == "None": %}
+      <div class="column" title="No work found">
+        <input class="un indicator" type="checkbox" disabled="disabled">
+      </div>
+        <div class="column">
+            <a class="noWorkButton">No work handed in</a>
+        </div>
+    {% endif %}
+
+  </div>
+{% endfor %}

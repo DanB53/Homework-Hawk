@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='static/help.css' type='text/css'>
+{% endblock %}
+{% block content %}
+<div class="content">
+        <div class="card help-nagivation">
+            <h2>Navigation</h2>
+            <a class="unselectable" onclick="showSection('scanning-students-work')">Scanning students work</a>
+            <a class="unselectable" onclick="showSection('automations')">Automations</a>
+            <a class="unselectable" onclick="showSection('changePassword')">Change Password</a>
+        </div>
+        <div class="card help-content">
+            <h2 id="scanning-students-work">Scanning Students Work</h2>
+            <ol>
+                <li>
+                    <p>Firstly pick a class. This can be done by pressing the "Classes" option on the navigation bar and picking the relevant class, or clicking on the class name on the home page.</p>
+                </li>
+                <li>
+                    <p>Next, select an assignment you have set for that class. All students who have handed in work for the assignment will appear in a list.</p>
+                </li>
+                <li>
+                    <p>A white box will appear next to the names of the students who have not yet been scanned.</p>
+                </li>
+            </ol>
+            <h2 id="automations">Automations</h2>
+            <ol>
+                <li>
+                    <p>An automation is a way to scan for students work automatically, without you having to manually select them.</p>
+                </li>
+                <li>
+                    <p>To access automations, click on the profile tab in the navigation bar.</p>
+                </li>
+                <li>
+                    <p>This can be used for students who you deem to be more likely to use AI and or plagiarism in their work, saving you from having to manually scan them for every assignment that they hand in.</p>
+                </li>
+                <li>
+                    <p>Start off by selecting a class that you're in.</p>
+                </li>
+                <li>
+                    <p>Add a student by clicking on the dropdown, and choose something to scan for by clicking on the other drop down and select the option. This will default to AI.</p>
+                </li>
+                <li>
+                    <p>
+                        Once you have added the options, press on <button style="width:max-content">Add Automation</button> to add the automation.
+                    </p>
+                </li>
+                <li>
+                    <p>Existing automations will be displayed below.</p>
+                </li>
+                <li>
+                    <p>In order to delete an automation, press on the delete button</p>
+                </li>
+            </ol>
+            <h2 id="changePassword">Change Password</h2>
+            <ol>
+                <li>
+                    <p>In order to change your password, access the Profile page, by hovering over the Account tab in the navigation bar and clicking on Profile.</p>
+                </li>
+                <li>
+                    <p>On the right side of the screen, you will see options to enter your old password, the new password you'd like to set and then a confirm password field where you should re-enter your new password in order to make sure that's the correct password you'd like to use.</p>
+                </li>
+                <li>
+                    <p>Enter the relevant details, and press on <button style="width:max-content">Submit</button></p>
+                </li>
+                <li>
+                    <p>If the new passwords match and your old password is correct, you will be redirected to a login page where you should enter your new log in details.</p>
+                </li>
+            </ol>
+        </div>
+
+</div>
+    <script src="/static/help.js"></script>
+{% endblock %}

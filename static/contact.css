@@ -1,0 +1,46 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.card{
+    width: 70vw;
+    aspect-ratio: 1/0.5 ;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2%;
+    width: 100%;
+    gap:25px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px;
+    height:100%;
+}
+
+
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    gap:50px;
+    width: 100%;
+}
+
+input{
+    margin:0;
+}
+
+textarea{
+    resize: none;
+    height:50%;
+}

@@ -1,0 +1,18 @@
+<div class="educatorRow">
+    <form id="newEducator">
+        <p>When
+        <select id="selectedStudent">
+            {% for value in students %}
+                <option>{{ value }}</option>
+            {% endfor %}
+        </select>
+        submits an assignment, scan for
+        <select id="selectedOption">
+            <option>AI</option>
+            <option>Plagiarism</option>
+            <option>Both</option>
+        </select>
+    </p>
+    <button type="submit">Add Automation</button>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+
+<div class="automationRow">
+    <form id="newAutomation">
+        <p>When
+        <select id="selectedStudent">
+            {% for value in students %}
+                <option>{{ value }}</option>
+            {% endfor %}
+        </select>
+        submits an assignment, scan for
+        <select id="selectedOption">
+            <option>AI</option>
+            <option>Plagiarism</option>
+            <option>Both</option>
+        </select>
+    </p>
+    <button type="submit">Add Automation</button>
+    </form>
+</div>
+
+<div class="existingAutomations">
+<link rel="stylesheet" href="/static/automations.css">
+<h4>Existing Automations</h4>
+    {% for value in existingAutomations %}
+        {% if value[2] == "Plagiarism" %}
+            <div class="line">
+                <p>{{ value[0] }} {{ value[1] }}</p>
+                <p class="pl indicator" title="Plagiarism">mmii</p>
+                <span onclick="removeAutomation({{ value }})" class="material-symbols-outlined">delete</span>
+            </div>
+        {% endif %}
+        {% if value[2] == "AI" %}
+            <div class="line">
+                <p onclick="removeAutomation({{ value }})">{{ value[0] }} {{ value[1] }}</p>
+                <p class="ai indicator" title="AI">mmii</p>
+                <span onclick="removeAutomation({{ value }})" class="material-symbols-outlined">delete</span>
+            </div>
+        {% endif %}
+        {% if value[2] == "Both" %}
+            <div class="line">
+            <p onclick="removeAutomation({{ value }})">{{ value[0] }} {{ value[1] }}</p>
+                <div class="column" >
+                <p class="bo indicator" title="AI and Plagiarism">mi</p>
+                <p class="bo indicator" title="AI and Plagiarism">mi</p>
+                </div>
+                <span onclick="removeAutomation({{ value }})" class="material-symbols-outlined">delete</span>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</div>

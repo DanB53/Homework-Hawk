@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+.unselectable{
+    user-select: none;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+body{
+    margin: 0;
+    font-family: 'Jost';
+    cursor: default;
+    background-color: #F3F3F3;
+}
+
+
+
+h1{
+    font-size: 50px;
+    line-height: 100%;
+    margin: 0;
+}
+h2{
+    font-size: 45px;
+    line-height: 100%;
+    margin: 0;
+}
+h3{
+    font-size: 40px;
+    line-height: 100%;
+    margin: 0;
+}
+h4{
+    font-size: 30px;
+    line-height: 100%;
+    margin: 0;
+}
+h5{
+    font-size: 20px;
+    line-height: 100%;
+    margin: 0;
+}
+p{
+    font-size: 20px;
+    line-height: 20px;
+}
+label{
+    font-size: 20px;
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+
+button{
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Jost';
+    font-size: 20px;
+    color: white;
+    background-color: #5BB3A8;
+    border: 0;
+    border-radius: 5px;
+    user-select: none;
+    text-align: center;
+    height: fit-content;
+}
+
+button:hover{
+    background-color: #376c65;
+    transition: 250ms;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    text-align: baseline;
+    top:0;
+    max-width: 100%;
+}
+
+
+
+nav .links{
+    display: flex;
+    gap:25px;
+    align-items: center;
+    width:fit-content;
+    /* margin-left: 50px; */
+    /* background-color: red; */
+}
+
+nav .logo{
+    display: flex;
+    gap:25px;
+    cursor:pointer;
+    width: 25%;
+    align-items: center;
+}
+.logo h1{
+    font-size: 30px;
+}
+
+
+
+select{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background:none;
+    border: 0;
+}
+
+
+.notification {
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: fit-content;
+    gap:0px;
+    display: none;
+    width: 45%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+.notification:hover{
+    background-color: rgba(0, 108, 0, 0.528);
+    transition: 250ms;
+}
+
+
+  #notification-text{
+    margin:3px;
+  }
+
+  #notification-background{
+    background-color: rgba(0, 128, 0, 0.319);
+    line-height: 7.5px;
+    color: transparent !important;
+    animation: notificationBackgroundSlide 5s forwards;
+    border-radius: 10px;
+  }
+
+
+  @keyframes notificationBackgroundSlide {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+
+.notification p{
+    line-height: 25px;
+}
+
+nav img{
+    width: 100px;
+}
+
+nav a{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 7.5px !important;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #376c65;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+
+.nav-highlighted{
+    background-color: #5BB3A8;
+    color: white !important;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+#sub-nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.midButton{
+    border-radius: 0px !important;
+}
+
+
+.input button:hover, .nav-highlighted:hover{
+    background-color: #376c65;
+    transition: 250ms;
+}
+
+input{
+    width: 100%;
+    height: 25px;
+    border: none;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+}
+
+
+.card{
+    width: 30vw;
+    aspect-ratio: 9/12;
+    /* border: 5px red solid; */
+    display: flex;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-height:fit-content
+}
+
+
+
+
+#profile-sub-menu{
+    display: none;
+}
+
+.profile-outer-menu{
+    display: flex;
+    flex-direction: column;
+    max-height: 55px;
+}
+
+.profile-outer-menu:hover #profile-sub-menu{
+    display: block !important;
+}
+
+.profile-outer-menu:hover .nav-highlighted{
+    border-radius: 10px 10px 0px 0px;
+    transition: 0ms;
+}
+
+#profile-sub-menu{
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+    padding: 0 5%;
+}
+
+.indicator{
+    color:transparent;
+    font-size: 10px;
+    padding:10px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.ai{
+    background-color: red;
+}
+
+.pl{
+    background-color: orange;
+}
+
+.cl{
+    background-color: lightgreen;
+}
+
+.bo{
+    padding:10px 5px;
+
+}
+
+.bo:nth-child(1){
+    background-color: red;
+    border-radius: 10px 0 0 10px;
+
+}
+
+.bo:nth-child(2){
+    background-color: orange;
+    border-radius: 0 10px 10px 0;
+
+}
+
+.un {
+    zoom:2;
+    margin:1.5px;
+    background-color: white;
+}
+
+
+span{
+    user-select: none;
+    padding:5px;
+}
+
+span:hover{
+    border-radius: 50%;
+
+    background-color: #F3F3F3;
+}
+
+
+
+@media (width <= 600px) {
+    body{
+        overflow-x: hidden;
+    }
+
+    .cards-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 100%;
+        margin-top: 25px;
+        aspect-ratio: 0/0;
+    }
+
+    nav{
+        padding:0 5px 0 0;
+    }
+
+    nav h1{
+        display: none;
+    }
+    nav .links{
+        gap:5px
+    }
+
+
+    #sub-nav #logoutButton{
+        display: block;
+    }
+
+    .content{
+        margin-top: 25px;
+        padding: 0 5%
+    }
+}

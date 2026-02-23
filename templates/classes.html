@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/classes.css' type='text/css'>
+{% endblock %}
+{% block content %}
+    <div class="content">
+    <h3>Classes</h3>
+        <div class="classes">
+            {% for class in classes %}
+                {% if class != "No classes found. Ask your administrator to add you to a class." %}
+                    <div class="class">
+                        <a href="/class/{{ class }}">{{class}}</a>
+                    </div>
+                {% else %}
+                    <p>No classes found. Ask your administrator to add you to a class.</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

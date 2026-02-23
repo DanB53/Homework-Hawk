@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block style %}
+    <link rel='stylesheet' href='/static/home.css' type='text/css'>
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <div id="sub-nav">
+            <h3>Home</h3>
+        </div>
+        <div class="cards-wrapper">
+            <div class="card">
+                <div class="card-content">
+                    <h4>Classes</h4>
+                    <div id="classes" class="card-main">
+                        {% for class in classes %}
+                        <div class="class">
+                            <a href="/class/{{ class }}">{{class}}</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h4>Manual Upload</h4>
+                    <div class="card-main" id="manual-upload">
+                        <textarea id="uploadbox" placeholder="Enter text here..."></textarea>
+                        <form class="options" id="manual-upload-form">
+                            <div class="option">
+                                <label>Plagiarism</label>
+                                <input type="checkbox" id="plagiarismCheckbox">
+                            </div>
+                            <div class="option">
+                                <label>AI</label>
+                                <input type="checkbox" id="AICheckbox">
+                            </div>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h4>Activity</h4>
+                    <div class="card-main" id="activities">
+                        {% for activity in activities %}
+                            <a>{{ activity }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/home.js"></script>
+{% endblock %}

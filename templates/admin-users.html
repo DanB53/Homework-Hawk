@@ -1,0 +1,25 @@
+<tr>
+    <td>User Name</td>
+    <td>Admin</td>
+    <td>Delete</td>
+</tr>
+{% for user in users %}
+    <tr>
+
+        <td>
+            <p>{{ user[0][0] }}</p>
+        </td>
+
+        <td id="adminIcons">
+            {% if user[1] == True %}
+                <span onclick="adminOff('{{user[0][0]}}')" class="material-symbols-outlined on">toggle_on</span>
+            {% else %}
+                <span onclick="adminOn('{{user[0][0]}}')" class="material-symbols-outlined off">toggle_off</span>
+            {% endif %}
+
+        </td>
+        <td id="tableIcons">
+            <span onclick="removeUser('{{ user[0][0] }}')" class="material-symbols-outlined">delete</span>
+        </td>
+    </tr>
+{% endfor %}

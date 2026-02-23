@@ -1,0 +1,23 @@
+<tr>
+    <td>Class Name</td>
+    <td>User</td>
+    <td>Options</td>
+</tr>
+{% for class in classes %}
+    <tr>
+        <td id="tableClassName">
+            <p id="{{ class[0] }} ClassName">{{ class[0] }}</p>
+        </td>
+        <td id="tableUserName">
+            {% if class[1] == "None" %}
+                <p id="{{ class[0] }} UserName" class="noUserWarning">No user assigned</p>
+            {% else %}
+                <p id="{{ class[0] }} UserName">{{ class[1] }}</p>
+            {% endif %}
+        </td>
+        <td id="tableIcons">
+            <span id="{{class[0]}} EditButton" onclick="editClass({{ class }})" class="material-symbols-outlined">edit</span>
+            <span id="{{class[0]}} DeleteButton" onclick="removeClass({{class}})" class="material-symbols-outlined">delete</span>
+        </td>
+    </tr>
+{% endfor %}

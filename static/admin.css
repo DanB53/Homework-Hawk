@@ -1,0 +1,140 @@
+.content{
+    display: block;
+}
+.cards-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.card{
+    width: 29vw;
+    overflow: hidden;
+}
+
+
+
+.card-content{
+    padding:5px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.stats{
+    width: 95%;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#newClass, #newUser{
+    margin-top: 5%;
+    display: flex;
+    gap:5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.scroll-wrapper{
+    width: 100%;
+    height:24vw;
+    overflow-y: auto;
+}
+
+#classesSW{
+    height:25vw
+}
+#classesStatsWrapper{
+    height:40vw
+}
+
+
+
+#classes, #users{
+    width: 100%;
+    height:5px;
+}
+.adminCheckbox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.adminCheckbox p{
+    width: 100%;
+    padding-left: 10%;
+}
+
+.adminCheckbox input{
+    margin: 0;
+    width: 50%;
+}
+
+tr{
+    display: flex;
+}
+
+td{
+    display: flex;
+    width: 33%;
+    max-width: 33%;
+    align-items: center;
+    justify-content: center;
+}
+
+td p{
+    font-size: 17.5px;
+}
+.icons{
+    gap:10px
+}
+
+
+
+#users td{
+    width: 50%;
+}
+
+
+.on{
+    margin-left: 10px;
+    color:green
+}
+.off{
+    margin-left: 10px;
+    color:red
+}
+
+
+select{
+    font-size: 17.5px !important;
+}
+
+input[type=text]{
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.noUserWarning{
+    background-color: red;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    color:white;
+    user-select:none;
+}

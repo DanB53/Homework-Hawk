@@ -1,0 +1,12 @@
+.content{
+    display: block;
+}
+form{
+    display: flex;
+    align-items: center;
+    gap:50px
+}
+
+button{
+    width: 25%;
+}

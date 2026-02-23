@@ -1,0 +1,31 @@
+.content{
+    align-items: start;
+    margin-top: 15vh;
+}
+.card{
+    width: 100%;
+    padding: 0.5% 1%;
+    aspect-ratio: 1/1;
+    display: block;
+}
+.help-nagivation{
+    position: sticky;
+    top:0;
+    z-index: 5;
+    width: 30%;
+    margin-right: 0.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a:hover{
+    background-color: #F3F3F3;
+    border-radius: 10px;
+}
+
+.content a{
+    margin-top:10px;
+    font-size: 20px;
+    padding:5px 10px;
+}

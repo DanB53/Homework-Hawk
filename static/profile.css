@@ -1,0 +1,109 @@
+.content{
+    padding: 0 5%;
+    display: block;
+}
+
+.cards-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    width: 44vw;
+    aspect-ratio: 1/0.9;
+    
+}
+
+#automations{
+    /*overflow-y: scroll;*/
+}
+
+.automationRow{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+
+.card-content{
+    padding:5px 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.rows{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 75%;
+}
+
+form{
+    width: 100%;
+}
+
+#class{
+    display: flex;
+    justify-content: center;
+}
+
+.row{
+    padding-top:25px;
+    display: flex;
+    height:30px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap:50px;
+}
+
+.column{
+    display: flex;
+    align-items: center;
+}
+
+
+
+#flagPercentage{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+@media (width <= 600px) {
+    .cards-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+    }
+    .card{
+        width: 100%;
+        margin-top: 25px;
+        aspect-ratio: 0/0;
+    }
+
+    nav{
+        padding:0 5px 0 0;
+    }
+
+    nav h1{
+        display: none;
+    }
+    nav .links{
+        gap:5px
+    }
+    .content{
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}

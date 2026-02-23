@@ -1,0 +1,108 @@
+nav{
+    position: relative;
+}
+
+.row{
+    display: flex;
+    gap:10px;
+    /*justify-content: space-evenly;*/
+    table-layout: fixed;
+    align-items: center;
+    /*border: 5px red solid;*/
+
+}
+
+.column{
+    display: flex;
+    width: max-content;
+    justify-content: start !important;
+    align-items: center;
+}
+
+h3, h4, select{
+    margin: 0 5%;
+}
+
+.info{
+    margin-top: 5%;
+}
+
+
+#assignmentSelect{
+    margin-top: 1%;
+}
+
+.scanRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    /*border: 5px red solid;*/
+}
+
+.key{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    /*padding: 0 5%;*/
+    align-items: center;
+}
+
+.keyRow{
+    display: flex;
+    width: 100%;
+    gap:15px;
+    /*background: red;*/
+    justify-content: space-between;
+}
+
+#scanOptionDiv{
+    display: flex;
+    width: 50%;
+    align-items: baseline;
+    padding: 0 5.25%
+}
+
+main{
+    padding: 0 5% ;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#card{
+    width: 350px;
+    border-radius: 20px;
+}
+
+
+#scanTypeSelect{
+    margin-top: 1%;
+    margin-left: 1%;
+    font-weight: 200;
+}
+
+.noWorkButton{
+    background-color: red;
+    font-size: 20px;
+    border-radius: 5px;
+    padding:1px 6px;
+    font-weight: 600;
+    color:white;
+    user-select:none;
+}
+.noWorkButton:hover{
+    background-color: #c40000;
+}
+
+iframe{
+    width: 800px;
+    height: 500px;
+}
+input{
+    display: none;
+}
+
+iframe header {
+    display: none;
+}
