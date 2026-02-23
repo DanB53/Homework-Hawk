@@ -74,7 +74,7 @@ def plScan(student_id, assignment_id, text, minFlagPercentage):
     elif len(sectionedText) >= 2:
         for set in range(len(sectionedText)):
             url = "https://api.originality.ai/api/v1/scan/plag"
-            headerKey = "i1fxjcv9p2wsumrdtq4keh837znly6ag"
+            headerKey = "Insert API Key Here"
             sendData = json.dumps({
                 "content": text,
                 "title": str(student_id) + "," + str(assignment_id),
@@ -94,7 +94,7 @@ def aiplScan(student_id, assignment_id, text):
     if len(text.split()) < 50:
         return "Error", None, None
     url = "https://api.originality.ai/api/v1/scan/ai-plag"
-    headerKey = "i1fxjcv9p2wsumrdtq4keh837znly6ag"
+    headerKey = "Insert API Key Here"
     sendData = json.dumps({
         "content": text,
         "title": str(student_id) + "," + str(assignment_id),
@@ -122,7 +122,7 @@ def plManualUpload(user_id, text, minFlagPercentage):
     sectionedText = splitText(text)
     if len(sectionedText) == 1:
         url = "https://api.originality.ai/api/v1/scan/plag"
-        headerKey = "i1fxjcv9p2wsumrdtq4keh837znly6ag"
+        headerKey = "Insert API Key Here"
         sendData = json.dumps({
             "content": text,
             "title": str(user_id)+" Manual Upload",
@@ -139,7 +139,7 @@ def plManualUpload(user_id, text, minFlagPercentage):
     elif len(sectionedText) >= 2:
         for set in range(len(sectionedText)):
             url = "https://api.originality.ai/api/v1/scan/plag"
-            headerKey = "i1fxjcv9p2wsumrdtq4keh837znly6ag"
+            headerKey = "Insert API Key Here"
             sendData = json.dumps({
                 "content": text,
                 "title": str(user_id)+" Manual Upload",
@@ -160,7 +160,7 @@ def aiManualUpload(user_id, text):
     if len(text.split()) < 50:
         return "Error"
     url = "https://api.originality.ai/api/v1/scan/ai"
-    headerKey = "i1fxjcv9p2wsumrdtq4keh837znly6ag"
+    headerKey = "Insert API Key Here"
     sendData = json.dumps({
         "content": text,
         "title": str(user_id)+" Manual Upload",
@@ -184,7 +184,7 @@ def aiplManualUpload(user_id, text):
     if len(text.split()) < 50:
         return "Error", None
     url = "https://api.originality.ai/api/v1/scan/ai-plag"
-    headerKey = "i1fxjcv9p2wsumrdtq4keh837znly6ag"
+    headerKey = "Insert API Key Here"
     sendData = json.dumps({
         "content": text,
         "title": str(user_id)+" Manual Upload",
